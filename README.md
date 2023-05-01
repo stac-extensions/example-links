@@ -1,18 +1,18 @@
-# Template Extension Specification
+# Example Links Extension Specification
 
-- **Title:** Template
-- **Identifier:** <https://stac-extensions.github.io/template/v1.0.0/schema.json>
-- **Field Name Prefix:** template
-- **Scope:** Item, Collection
+- **Title:** Example Links
+- **Identifier:** <https://stac-extensions.github.io/example-links/v1.0.0/schema.json>
+- **Field Name Prefix:** example
+- **Scope:** Item, Catalog, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
-- **Owner**: @your-gh-handles @person2
+- **Owner**: @m-mohr
 
-This document explains the Template Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
-This is the place to add a short introduction.
+This document explains the Example Links Extension to the
+[SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
+It allows to add example links in a well-specified manner so that e.g. code snippets can be shown with code highlighting.
 
 - Examples:
   - [Item example](examples/item.json): Shows the basic usage of the extension in a STAC Item
-  - [Collection example](examples/collection.json): Shows the basic usage of the extension in a STAC Collection
 - [JSON Schema](json-schema/schema.json)
 - [Changelog](./CHANGELOG.md)
 
@@ -20,41 +20,116 @@ This is the place to add a short introduction.
 
 The fields in the table below can be used in these parts of STAC documents:
 - [ ] Catalogs
-- [x] Collections
-- [x] Item Properties (incl. Summaries in Collections)
-- [x] Assets (for both Collections and Items, incl. Item Asset Definitions in Collections)
-- [ ] Links
+- [ ] Collections
+- [ ] Item Properties (incl. Summaries in Collections)
+- [ ] Assets (for both Collections and Items, incl. Item Asset Definitions in Collections)
+- [x] Links (with `rel` set to `example`)
 
-| Field Name           | Type                      | Description |
-| -------------------- | ------------------------- | ----------- |
-| template:new_field   | string                    | **REQUIRED**. Describe the required field... |
-| template:xyz         | [XYZ Object](#xyz-object) | Describe the field... |
-| template:another_one | \[number]                 | Describe the field... |
+| Field Name        | Type    | Description |
+| ----------------- | ------- | ----------- |
+| example:container | boolean | Specifies whether the given URI points directly to the example code (`false`, default, e.g. a Python file) or to a container format (`true`, e.g. PDF, HTML, Jupyter Notebook, Markdown, ...) that contains/describes code snippets. |
+| example:code      | string  | If the example is in a specific programming language, specify it here. Should be one of the [languages listed for Linguist](https://github.com/github-linguist/linguist/blob/master/lib/linguist/languages.yml). For example, `JavaScript` or `Python`. |
 
-### Additional Field Information
-
-#### template:new_field
-
-This is a much more detailed description of the field `template:new_field`...
-
-### XYZ Object
-
-This is the introduction for the purpose and the content of the XYZ Object...
-
-| Field Name  | Type   | Description |
-| ----------- | ------ | ----------- |
-| x           | number | **REQUIRED**. Describe the required field... |
-| y           | number | **REQUIRED**. Describe the required field... |
-| z           | number | **REQUIRED**. Describe the required field... |
+Recommended additional fields:
+- `descripton`: It is recommended to add a description
+- `file:size`: If `example:container` is `false` (ot not set), clients may decide to load the code and highlight it in the UI.
+  Thus, it is recommended to set the field [`file:size` from the file extension](https://github.com/stac-extensions/file/blob/main/README.md)
+  so that clients may skip loading overly large examples.
 
 ## Relation types
 
-The following types should be used as applicable `rel` types in the
+The following types must be used as applicable `rel` types in the
 [Link Object](https://github.com/radiantearth/stac-spec/tree/master/item-spec/item-spec.md#link-object).
 
-| Type                | Description |
-| ------------------- | ----------- |
-| fancy-rel-type      | This link points to a fancy resource. |
+| Type    | Description |
+| ------- | ----------- |
+| example | Link to an example. |
+
+## Usage Examples
+
+Examples can be provided directly as source code files or as a document with embedded code (e.g. web page, PDF document, Jupyter Notebook).
+
+### Examples: Source Code Files
+
+The Link Object for a Python source code file:
+```json
+{
+  "rel": "example",
+  "href": "https://stac.example/run.py",
+  "title": "Example in Python",
+  "type": "text/x-python",
+  "description": "This describes the *Python* script...",
+  "file:size": 123547,
+  "example:language": "Python"
+}
+```
+
+The Link Object for a JavaScript source code file:
+```json
+{
+  "rel": "example",
+  "href": "https://stac.example/run.js",
+  "title": "Example in JavaScript",
+  "type": "application/javascript",
+  "description": "This describes the *JavaScript* code...",
+  "file:size": 231,
+  "example:language": "JavaScript"
+}
+```
+
+### Examples: Embedded Code
+
+The Link Object for a PDF document with C code:
+```json
+{
+  "rel": "example",
+  "href": "https://stac.example/py-example.pdf",
+  "title": "Example PDF containing C",
+  "description": "Describes how to do fancy stuff with the data in C",
+  "type": "application/pdf",
+  "example:container": true,
+  "example:language": "C"
+}
+```
+
+The Link Object for a Jupyter Notebook containing Python code:
+```json
+{
+  "rel": "example",
+  "href": "https://stac.example/py-notebook.ipynb",
+  "title": "Example Notebook containing Python",
+  "description": "Describes how to do fancy stuff with the data in Python",
+  "type": "application/x-ipynb+json",
+  "example:container": true,
+  "example:language": "Python"
+}
+```
+
+The Link Object for a HTML document that shows JavaScript code:
+```json
+{
+  "rel": "example",
+  "href": "https://stac.example/js-example.html",
+  "title": "Example webpage containing JS",
+  "description": "Describes how to do fancy stuff with the data in JavaScript",
+  "type": "text/html",
+  "example:container": true,
+  "example:language": "JavaScript"
+}
+```
+
+The Link Object for a RMarkdown document that shows R code:
+```json
+{
+  "rel": "example",
+  "href": "https://stac.example/js-example.rmd",
+  "title": "Example RMarkdown document containing R",
+  "description": "Describes how to do fancy stuff with the data in R",
+  "type": "text/markdown",
+  "example:container": true,
+  "example:language": "R"
+}
+```
 
 ## Contributing
 

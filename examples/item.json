@@ -1,7 +1,8 @@
 {
   "stac_version": "1.0.0",
   "stac_extensions": [
-    "https://stac-extensions.github.io/template/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/example-links/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.0.0/schema.json"
   ],
   "type": "Feature",
   "id": "item",
@@ -39,29 +40,71 @@
     ]
   },
   "properties": {
-    "datetime": "2020-12-11T22:38:32Z",
-    "template:new_field": "test",
-    "template:xyz": {
-      "x": 1,
-      "y": 2,
-      "z": 3
-    },
-    "template:another_one": [
-      1,
-      2,
-      3
-    ]
+    "datetime": "2020-12-11T22:38:32Z"
   },
   "links": [
     {
       "href": "https://example.com/examples/item.json",
       "rel": "self"
+    },
+    {
+      "rel": "example",
+      "href": "https://stac.example/run.py",
+      "title": "Example in Python",
+      "type": "text/x-python",
+      "description": "This describes the *Python* script...",
+      "file:size": 123547,
+      "example:language": "Python"
+    },
+    {
+      "rel": "example",
+      "href": "https://stac.example/run.js",
+      "title": "Example in JavaScript",
+      "type": "application/javascript",
+      "description": "This describes the *JavaScript* code...",
+      "file:size": 231,
+      "example:language": "JavaScript"
+    },
+    {
+      "rel": "example",
+      "href": "https://stac.example/py-example.pdf",
+      "title": "Example PDF containing C",
+      "description": "Describes how to do fancy stuff with the data in C",
+      "type": "application/pdf",
+      "example:container": true,
+      "example:language": "C"
+    },
+    {
+      "rel": "example",
+      "href": "https://stac.example/py-notebook.ipynb",
+      "title": "Example Notebook containing Python",
+      "description": "Describes how to do fancy stuff with the data in Python",
+      "type": "application/x-ipynb+json",
+      "example:container": true,
+      "example:language": "Python"
+    },
+    {
+      "rel": "example",
+      "href": "https://stac.example/js-example.html",
+      "title": "Example webpage containing JS",
+      "description": "Describes how to do fancy stuff with the data in JavaScript",
+      "type": "text/html",
+      "example:container": true,
+      "example:language": "JavaScript"
+    },
+    {
+      "rel": "example",
+      "href": "https://stac.example/js-example.rmd",
+      "title": "Example RMarkdown document containing R",
+      "description": "Describes how to do fancy stuff with the data in R",
+      "type": "text/markdown",
+      "example:container": true,
+      "example:language": "R"
     }
   ],
   "assets": {
     "data": {
-      "href": "https://example.com/examples/file.xyz",
-      "template:new_field": "test"
+      "href": "https://example.com/examples/file.xyz"
     }
   }
 }
