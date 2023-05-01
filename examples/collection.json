@@ -1,0 +1,217 @@
+{
+  "type": "Collection",
+  "id": "10300100D6740900",
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/example-links/v1.0.0/schema.json"
+  ],
+  "description": "10300100D6740900 ARD Tiles",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../order_collections/6116191646164789069_root_collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../order_collections/6116191646164789069_root_collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "example",
+      "href": "https://ard.maxar.com/docs/sdk/sdk/ard-collections/",
+      "title": "Working with ARD",
+      "type": "text/html",
+      "description": "A user guide to working with ARD tiles using the Python SDK",
+      "example:language": "Python",
+      "example:container": true
+    },
+    {
+      "rel": "example",
+      "href": "https://ard.maxar.com/docs/sdk/examples/ard-collections.ipynb",
+      "title": "Working with ARD Jupyter Notebook",
+      "type": "application/x-ipynb+json",
+      "description": "A Jupyter notebook that demonstrates working with ARD tiles using the Python SDK",
+      "example:language": "Python",
+      "example:container": true
+    },
+    {
+      "rel": "example",
+      "href": "https://ard.maxar.com/docs/working-with-ard/command-line-tools/",
+      "title": "Command Line Tools and Examples",
+      "type": "text/html",
+      "description": "Examples of using ARD tiles with command line tools",
+      "example:language": "Shell",
+      "example:container": true
+    },
+    {
+      "rel": "item",
+      "href": "../37/031133102021/2022-07-20/10300100D6740900.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "../37/031133102023/2022-07-20/10300100D6740900.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "../37/031133102030/2022-07-20/10300100D6740900.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "../37/031133102031/2022-07-20/10300100D6740900.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "../37/031133102032/2022-07-20/10300100D6740900.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "../37/031133102033/2022-07-20/10300100D6740900.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "../37/031133102120/2022-07-20/10300100D6740900.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "../37/031133102122/2022-07-20/10300100D6740900.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "../37/031133102201/2022-07-20/10300100D6740900.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "../37/031133102210/2022-07-20/10300100D6740900.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "../37/031133102211/2022-07-20/10300100D6740900.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "../37/031133102213/2022-07-20/10300100D6740900.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "../37/031133102300/2022-07-20/10300100D6740900.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "../37/031133102302/2022-07-20/10300100D6740900.json",
+      "type": "application/json"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          37.30336705567165,
+          37.07774613565559,
+          37.314255101805024,
+          37.117494
+        ],
+        [
+          37.30039257484139,
+          37.03263672251115,
+          37.31525167755962,
+          37.08071942216613
+        ],
+        [
+          37.309865021389086,
+          37.07785365964452,
+          37.37048411451594,
+          37.117274553895086
+        ],
+        [
+          37.36620845918291,
+          37.07864138718362,
+          37.426715272059255,
+          37.1140854180301
+        ],
+        [
+          37.31067837196374,
+          37.032801562067945,
+          37.371447485344646,
+          37.081505564357975
+        ],
+        [
+          37.3669093259087,
+          37.033588010624975,
+          37.42764543298728,
+          37.082265059524346
+        ],
+        [
+          37.422547609904576,
+          37.07940247059962,
+          37.45699048991894,
+          37.1108965248208
+        ],
+        [
+          37.423142429615005,
+          37.03434785829439,
+          37.45720644222971,
+          37.082664000571135
+        ],
+        [
+          37.29774464331677,
+          36.99065874127206,
+          37.31618298676643,
+          37.03566726625934
+        ],
+        [
+          37.311677161662786,
+          36.98999554389742,
+          37.372378565844016,
+          37.03645213207826
+        ],
+        [
+          37.367874906387314,
+          36.989777305565475,
+          37.428564506956285,
+          37.03721039411083
+        ],
+        [
+          37.36883834208823,
+          36.98977730557553,
+          37.42856450436698,
+          36.99215536575149
+        ],
+        [
+          37.4240747958866,
+          36.98967723387373,
+          37.457524034308584,
+          37.03759932091969
+        ],
+        [
+          37.425005091096544,
+          36.9896650792383,
+          37.45745742303459,
+          36.99253479530699
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2022-07-20 08:39:24Z",
+          "2022-07-20 08:39:25Z"
+        ]
+      ]
+    }
+  },
+  "license": "proprietary"
+}
