@@ -28,10 +28,11 @@ The fields in the table below can be used in these parts of STAC documents:
 | Field Name        | Type    | Description |
 | ----------------- | ------- | ----------- |
 | example:container | boolean | Specifies whether the given URI points directly to the example code (`false`, default, e.g. a Python file) or to a container format (`true`, e.g. PDF, HTML, Jupyter Notebook, Markdown, ...) that contains/describes code snippets. |
-| example:code      | string  | If the example is in a specific programming language, specify it here. Should be one of the [languages listed for Linguist](https://github.com/github-linguist/linguist/blob/master/lib/linguist/languages.yml). For example, `JavaScript` or `Python`. |
+| example:language  | string  | If the example is in a specific programming language, specify it here. Should be one of the [languages listed for Linguist](https://github.com/github-linguist/linguist/blob/master/lib/linguist/languages.yml). For example, `JavaScript` or `Python`. |
 
 Recommended additional fields:
-- `descripton`: It is recommended to add a description
+- `descripton`: It is recommended to add a description as defined in
+  [common metadata](https://github.com/radiantearth/stac-spec/blob/master/item-spec/common-metadata.md#basics).
 - `file:size`: If `example:container` is `false` (ot not set), clients may decide to load the code and highlight it in the UI.
   Thus, it is recommended to set the field [`file:size` from the file extension](https://github.com/stac-extensions/file/blob/main/README.md)
   so that clients may skip loading overly large examples.
