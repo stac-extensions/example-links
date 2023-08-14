@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stac-extensions.github.io/example-links/v0.0.1/schema.json#",
+  "title": "Template Extension",
+  "description": "STAC Template Extension for STAC Items and STAC Collections.",
+  "type": "object",
+  "required": [
+    "stac_extensions",
+    "links"
+  ],
+  "properties": {
+    "stac_extensions": {
+      "type": "array",
+      "contains": {
+        "const": "https://stac-extensions.github.io/example-links/v0.0.1/schema.json"
+      }
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "if": {
+          "$ref": "#/definitions/exampleLink"
+        },
+        "then": {
+          "properties": {
+            "example:container": {
+              "type": "boolean",
+              "default": false
+            },
+            "example:language": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "pattern": "[^\\r\\n]+"
+            }
+          },
+          "patternProperties": {
+            "^(?!example:)": {}
+          },
+          "additionalProperties": false
+        },
+        "else": {
+          "patternProperties": {
+            "^(?!example:)": {}
+          },
+          "additionalProperties": false
+        }
+      },
+      "contains": {
+        "$ref": "#/definitions/exampleLink"
+      }
+    }
+  },
+  "definitions": {
+    "exampleLink": {
+      "type": "object",
+      "required": [
+        "rel"
+      ],
+      "properties": {
+        "rel": {
+          "const": "example"
+        }
+      }
+    }
+  }
+}
