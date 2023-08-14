@@ -1,7 +1,7 @@
 # Example Links Extension Specification
 
 - **Title:** Example Links
-- **Identifier:** <https://stac-extensions.github.io/example-links/v1.0.0/schema.json>
+- **Identifier:** <https://stac-extensions.github.io/example-links/v0.0.1/schema.json>
 - **Field Name Prefix:** example
 - **Scope:** Item, Catalog, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
@@ -41,6 +41,8 @@ Nevertheless, it is recommended to always specify `example:language` to improve 
 - `file:size`: If `example:container` is `false` (ot not set), clients may decide to load the code and highlight it in the UI.
   Thus, it is recommended to set the field [`file:size` from the file extension](https://github.com/stac-extensions/file/blob/main/README.md)
   so that clients may skip loading overly large examples.
+- Additional [request related properties](https://github.com/radiantearth/stac-spec/issues/1198)
+  such as `method`, `body` or `header` can be used.
 
 ## Relation types
 

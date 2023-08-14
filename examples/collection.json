@@ -3,7 +3,7 @@
   "id": "10300100D6740900",
   "stac_version": "1.0.0",
   "stac_extensions": [
-    "https://stac-extensions.github.io/example-links/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/example-links/v0.0.1/schema.json"
   ],
   "description": "10300100D6740900 ARD Tiles",
   "links": [
